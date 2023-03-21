@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Response {
 
     private String response;
-    private String[] responseArray;
+    //private String[] responseArray; gonna define this somewhere else now, delete when we do
     private final int responseArraySize = 6;  //the max amount of players for our game is 6, each response will be stored at an index
     private int responseIndex = 0;
     private boolean submitted = false;          //lets us know if the player has submitted their response or not
@@ -35,7 +35,7 @@ public class Response {
         return response;
     }
 
-    public void storeResponse(String response) {
+    public void storeResponse(String response, String[] responseArray) {
         /*
             we might have to send the array as a parameter?
          */
