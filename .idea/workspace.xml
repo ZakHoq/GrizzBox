@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="312741cf-9922-4004-b0c7-49076473d8c7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/gui/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GrizzBox/Prompt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GrizzBox/Prompt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GrizzBox/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GrizzBox/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
