@@ -10,6 +10,10 @@ public class Prompt {
     private FileInputStream fileStringStream = null; //File input stream
     private Scanner inFS = null;
 
+    public Prompt() throws FileNotFoundException {
+        convertFileToArray();
+    }
+
 
     public void convertFileToArray() throws FileNotFoundException {
         fileStringStream = new FileInputStream("PromptChoices.txt");
