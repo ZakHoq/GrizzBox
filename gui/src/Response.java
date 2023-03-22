@@ -5,8 +5,8 @@ import java.util.Scanner;
  */
 public class Response {
 
-    private String response;
-    private String[] responseArray; 
+    private String response = "";
+    private String[] responseArray;
     private final int responseArraySize = 6;  //the max amount of players for our game is 6, each response will be stored at an index
     private int responseIndex = 0;
     private int submission = 0;
@@ -25,10 +25,6 @@ public class Response {
 
     public String getResponse() {
 
-        if (!scanner.hasNextLine()){
-            return null;
-        }
-
         while(scanner.hasNextLine()) {
             response += scanner.nextLine();     //in case their response is multiple lines
         }
@@ -38,7 +34,7 @@ public class Response {
         return response;
     }
 
-    public void storeResponse(String response, String[] responseArray) {
+    public void storeResponse(String response) {
         /*
             we might have to send the array as a parameter?
          */
@@ -46,10 +42,12 @@ public class Response {
             responseArray[responseIndex] = response;
             responseIndex++;
         }
+
+        System.out.println(responseArray[0]);
     }
 
     //Needs to be called at the end of each round
-    public void clearResponse(String[] responseArray) {
+    public void clearResponse() {
         responseIndex = 0;
         while (responseIndex < responseArraySize) {
             responseArray[responseIndex] = "";
