@@ -23,17 +23,18 @@ public class Response {
         responseArray = new String[responseArraySize];
     }
 
+    //call when submit button is pressed
     public String getResponse() {
 
-        while(scanner.hasNextLine()) {
-            response += scanner.nextLine();     //in case their response is multiple lines
-        }
+        response = scanner.nextLine();
 
-        submission++;     //if we go with other idea for submission
+        submission++;
 
         return response;
+
     }
 
+    //call when submit button is pressed after getResponse
     public void storeResponse(String response) {
         /*
             we might have to send the array as a parameter?
