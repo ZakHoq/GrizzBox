@@ -44,5 +44,14 @@ public class Response {
         }
     }
 
+    //Needs to be called at the end of each round
+    public void clearResponse(String[] responseArray) {
+        responseIndex = 0;
+        while (responseIndex < responseArraySize) {
+            responseArray[responseIndex] = "";
+            responseIndex++;
+        }
+    }
+
 
 }
