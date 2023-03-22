@@ -1,3 +1,5 @@
+import javafx.css.converter.StringConverter;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -9,35 +11,38 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Random;
 
 public class Controller {
-    public Text p = new Text(codegenerator());
+    @FXML
     public TextField respond;
+    @FXML
     public Button submit;
+    @FXML
     public Label title;
+    @FXML
     public Button join;
+    @FXML
     public Button start;
+    @FXML
+    public Text prompt = new Text();
+    @FXML
     private Stage stage;
+    @FXML
     private Scene scene;
+    @FXML
     private Parent root;
 
+    Prompt prompts = new Prompt();
 
-    public  String codegenerator() {
-        int leftLimit = 48; // numeral '0'
-        int rightLimit = 122; // letter 'z'
-        int targetStringLength = 6;
-        Random random = new Random();
+    public Controller() throws FileNotFoundException {
+    }
 
-        String generatedString = random.ints(leftLimit, rightLimit + 1)
-                .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
-                .limit(targetStringLength)
-                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
-                .toString();
 
-        return generatedString;}
 
+    @FXML
     public void returnToMain(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("start.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -46,6 +51,7 @@ public class Controller {
         stage.show();
     }
 
+    @FXML
     public void create(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("lobbyPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -53,12 +59,18 @@ public class Controller {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
     public void start(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("response.fxml"));
 
+        Parent root = FXMLLoader.load(getClass().getResource("response.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+    }
+    public void show(ActionEvent event){
+        prompt.setText(prompts.getPrompt());
+
     }
 }
